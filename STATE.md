@@ -12,7 +12,7 @@ Un second labo public, inspiré de l'interaction lab d'Emil Kowalski : Claude g�
 - Plugin `plugins/lab.ts` : liste des interactions (toutes en développement, seulement `kept.json` au build) et enregistrement des avis dans `.lab/feedback.json`.
 - Panneau d'avis (`src/review/`), chargé seulement sur le serveur de développement.
 - `scripts/check-public.mjs` (lancé par `npm run build`) et `scripts/check.mjs` (`npm run check`).
-- Workflow GitHub Pages prêt (`.github/workflows/deploy.yml`), jamais lancé : pas de dépôt GitHub.
+- Publié le 9 novembre 2026 : dépôt public https://github.com/ultrararebinary/interaction-lab (MIT, branche `main`), site https://ultrararebinary.github.io/interaction-lab/ déployé par `.github/workflows/deploy.yml` (Pages, source GitHub Actions). Le premier run a échoué faute de Pages activé, puis a réussi après activation et relance.
 - Vague 0 : la carte d'essai Latch (`interactions/latch/`), statut `trial`.
 - `.lab/ideas.json` (registre), `.lab/feedback.json` (un avis de test sur Latch). Pas encore de `.lab/TASTE.md`.
 
@@ -29,10 +29,14 @@ Un second labo public, inspiré de l'interaction lab d'Emil Kowalski : Claude g�
 
 - Le glisser de Latch au doigt sur un vrai téléphone (seul un toucher simulé a été essayé).
 - Le mouvement réduit de Latch au-delà de la lecture du CSS et de l'absence d'erreur sous émulation.
-- Le workflow GitHub Pages (aucun dépôt).
+
+## Vérifié en ligne le 9 novembre 2026
+
+- Le site répond 200 ; son JavaScript ne contient ni le geste de Latch, ni `__lab/feedback`, ni le texte du panneau. Accueil (état vide) et page Taste affichés dans le navigateur intégré, sans panneau ni erreur console.
+- Le dépôt contient le code de Latch (carte d'essai, jamais publiée sur le site) : c'est voulu, c'est le modèle de dossier pour lab-wave.
 
 ## Prochaines étapes
 
 1. Première vraie vague, dans une nouvelle session Claude Code ouverte dans AIOS ou dans ce dossier : `/lab-wave`.
 2. Après deux ou trois vagues : `/lab-taste`.
-3. Avec l'accord de Yann : créer le dépôt `ultrararebinary/interaction-lab`, activer Pages (source GitHub Actions), pousser, puis ajouter le lien depuis l'accueil d'Experiments.
+3. Avec l'accord de Yann : ajouter le lien vers le labo depuis l'accueil d'Experiments (le labo est en ligne). Attention : à chaque push, vérifier que seules les cartes de `kept.json` et la page Taste changent côté public.
