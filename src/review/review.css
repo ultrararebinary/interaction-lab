@@ -1,0 +1,160 @@
+/* Dev server only. The review panel is a tool for Yann, so it stays quiet: it sits under the
+   card, uses the neutral tokens and never the accent, which belongs to the interactions. */
+
+.review-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  margin-top: 40px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.review-bar p {
+  margin: 0;
+}
+
+.review-bar strong {
+  font-weight: 550;
+  color: var(--text);
+}
+
+.review-bar__count {
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.review {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.8125rem;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.review fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.review__legend {
+  float: left;
+  margin-right: 4px;
+  padding: 0;
+  color: var(--muted);
+}
+
+.review__choice,
+.review__tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 7px;
+  color: var(--muted);
+  background: var(--control);
+  cursor: pointer;
+  user-select: none;
+}
+
+.review__choice {
+  min-width: 72px;
+  justify-content: center;
+  font-weight: 500;
+}
+
+/* The real inputs stay in place, invisible, so keyboard and screen readers use them as usual. */
+.review__choice input,
+.review__tag input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.review__choice:has(input:checked),
+.review__tag:has(input:checked) {
+  color: var(--bg);
+  background: var(--text);
+}
+
+.review__choice:has(input:focus-visible),
+.review__tag:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.review__note textarea {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 7px;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--text);
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--ring);
+  resize: vertical;
+}
+
+/* 16 px stops iOS from zooming into the field. */
+@media (pointer: coarse) {
+  .review__note textarea {
+    font-size: 16px;
+  }
+}
+
+.review__note textarea::placeholder {
+  color: var(--muted);
+}
+
+.review__note textarea:focus-visible {
+  outline-offset: 0;
+  border-radius: 7px;
+}
+
+.review__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review__save {
+  min-height: 32px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 7px;
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: inherit;
+  color: var(--bg);
+  background: var(--text);
+  cursor: pointer;
+}
+
+.review__save:disabled {
+  color: var(--muted);
+  background: var(--control);
+  cursor: default;
+}
+
+.review__status {
+  color: var(--muted);
+}

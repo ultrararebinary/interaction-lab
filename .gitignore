@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+
+# Private lab files: raw reviews, the idea ledger, the taste profile, screenshots.
+# They stay on Yann's Mac. Only kept.json and content/taste.md are published.
+.lab/

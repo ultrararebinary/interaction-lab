@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "interaction-lab-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/yann/AIOS/projects/interaction-lab",
+        "run",
+        "dev"
+      ],
+      "port": 4330
+    },
+    {
+      "name": "interaction-lab-dist",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/yann/AIOS/projects/interaction-lab",
+        "run",
+        "preview"
+      ],
+      "port": 4331
+    }
+  ]
+}
