@@ -16,10 +16,12 @@ These are the rules every wave of the lab follows. Claude reads this file before
 4. A "how it works" line gives the key values of the effect, like "spring 0.32 s · no overshoot", so you can see how it is tuned.
 5. One accent color, and only where the hand acts.
 6. The same frame for every card, so they compare at a glance.
+7. While the hand drags, whatever it holds follows it continuously. A value that moves in steps settles on release and doesn't hold the hand back during the drag, unless that hold is the idea.
 
 ## Content
 
 - Ordinary interface parts done in a way that hasn't been seen before: button, switch, slider, field, list, menu, tooltip, text, and so on. Physics simulations and generative art are not the point.
+- The idea makes the component better at its job: fewer steps, a clearer state, more control. Motion that only decorates, or a detour around the usual gesture, doesn't make the cut, however original.
 - Nothing that already exists in the lab, kept or dropped, or in [experiments](https://github.com/ultrararebinary/experiments).
 - No copies of Emil Kowalski's interactions, whose lab inspired this one.
 - None of the default looks that make interfaces interchangeable: cream backgrounds by default, italic words in headings for an "editorial" feel, 01 / 02 / 03 numbering, monospace labels, pill buttons everywhere, purple-to-blue gradients, frosted glass, library icons in colored rounded squares, bento grids, fade-in on scroll. The exception is what experiments chose on purpose and recorded in its decisions, such as the bento grid of Shoji Bento: those stay allowed, as long as the idea itself is new.
@@ -29,6 +31,10 @@ These are the rules every wave of the lab follows. Claude reads this file before
 - Each interaction lives in its own folder, `interactions/<name>/`, with an `index.tsx` and a `.css`.
 - No dependency beyond React. Motion only if the idea can't work without it. No WebGL.
 - The folder may read the lab's color tokens (`--accent`, `--text`, `--muted`, `--control`, `--ring`, `--stage`), with a fallback, and nothing else from the site.
+
+## After a reading
+
+- A kept card whose review asks for a fix gets one revision before it's published. Yann tries it again, and it goes on the site once he's happy with it.
 
 ## The floor
 
